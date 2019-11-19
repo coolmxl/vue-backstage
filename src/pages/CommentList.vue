@@ -43,7 +43,7 @@
                 :total="tableData.length">
             </el-pagination>
         </div>
-        <el-dialog title="管理员信息" :visible.sync="dialogFormVisible">
+        <el-dialog title="请谨慎修改信息" :visible.sync="dialogFormVisible">
             <el-form :model="form">
                 <el-form-item label="id" :label-width="formLabelWidth">
                     <el-input v-model="form.id" autocomplete="off" :disabled="true"></el-input>
@@ -121,6 +121,7 @@ import HeadTop from '../components/HeadTop'
                 this.getSelectComment(row, 'edit')
             },
             async handleDelete(row){
+                confirm("确认要删除吗？")
                 let key_word = new window.FormData()
                 key_word.append('id',row.id)
                 try{

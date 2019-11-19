@@ -24,7 +24,7 @@
                 </el-form-item>
             </el-form>
             <div class="btn">
-                <router-link to="/login"><el-button  id="lol"  type="primary" @click="Login" @keyup.enter.native="Login">登录</el-button></router-link>
+                <router-link to="/login"><el-button  id="lol"  type="primary" @click="Login" @keyup.enter="Login">登录</el-button></router-link>
                 <!-- <router-link to="/regintser"><el-button type="success" >注册</el-button></router-link> -->
             </div>
         </div>
@@ -53,15 +53,6 @@ export default {
     methods: {
         show(res){
              this.vrt = res
-        },
-        async test(){
-            try{
-                let data = await axios.get("https://www.apiopen.top/femaleNameApi")
-                console.log(data)
-            }
-            catch(e){
-                console.log(e)
-            }
         },
         Login(){
             let msg = JSON.stringify(this.formInfo);
@@ -100,13 +91,12 @@ export default {
         },
     },
     mounted() {
-        this.test();
     },
 }
 </script>
 
 <style lang="stylus" scoped>
-html,body{
+.fa{
     overflow hidden
 }
 .container
@@ -120,7 +110,7 @@ html,body{
         width 1500px
     }
 #lol
-    width 300%
+    width 77%
 .fzw
     font-weight: 700;
 .box
@@ -146,16 +136,14 @@ html,body{
         height 667px
     }
     .btn
-        margin-left: 25%;
+        margin-left: 18%;
         margin-top: 5%;
 @media screen and (max-width: 955px) {
     #lol {
-        width 200%
     }
 }
 @media screen and (max-width: 700px) {
     #lol {
-        width 300%
     }
 }
 @media screen and (max-width: 376px) {
